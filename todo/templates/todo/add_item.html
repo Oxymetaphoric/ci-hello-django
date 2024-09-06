@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Add a ToDo Item:</h1>
-    <form method="POST" action="{% url 'add' %}">
+    <form method="POST" action="{% url 'add_item' %}">
       {% csrf_token %}
       <div>
         <p>
