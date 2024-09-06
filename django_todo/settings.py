@@ -17,6 +17,7 @@ if os.path.isfile('env.py'):
     import env
 
 development = os.environ.get('DEVELOPMENT', False)
+secret_key = os.environ.get('SECRET_KEY', '')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5ol29_v7*shy#hqp7nm7#$u!qe^4op%4w2m=d%t@5^4*5_dl^%'
+if os.path.isfile('env.py'): 
+    SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development 
